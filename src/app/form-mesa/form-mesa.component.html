@@ -1,0 +1,92 @@
+<div class="container">
+  <h3>Formulario para nueva mesa</h3>
+  <form [formGroup]="mesaFormulario" (ngSubmit)= "guardar()" novalidate> 
+      
+    
+
+    <div class="form-group">
+      <label for = "modelo" class="center-block">Modelo:</label>
+        <input name="modelo" class="form-control" formControlName="modelo" placeholder="Ej. Madera,Aluminio,Metal...">
+        <div [hidden]="modelo.untouched || (modelo.touched && modelo.valid)"
+            class="alert alert-danger">
+          El campo Modelo es requerido
+        </div>
+    </div>
+
+    <div class="form-group">
+      <label for = "marca" class="center-block">Marca:</label>
+        <input name="marca" class="form-control" formControlName="marca" placeholder="Ej. Madera,Aluminio,Metal...">
+        <div [hidden]="marca.untouched || (marca.touched && marca.valid)"
+            class="alert alert-danger">
+          El campo Marca es requerido
+        </div>
+    </div>
+
+      <div class="form-group">
+        <label for = "material" class="center-block">Material:</label>
+          <input name="material" class="form-control" formControlName="material" placeholder="Ej. Madera,Aluminio,Metal...">
+          <div [hidden]="material.untouched || (material.touched && material.valid)"
+              class="alert alert-danger">
+            El campo Material es requerido
+          </div>
+      </div>
+      
+      
+      <div class="form-group">
+        <label for="precio" >Precio: </label>
+          <input name="precio" class="form-control" formControlName="precio">
+          <div [hidden]="precio.untouched || (precio.touched && precio.valid)"
+                class="alert alert-danger">
+                El campo Precio debe ser un número y no puede estar vacío
+      </div>
+      </div>
+
+      
+
+      <div class="form-group">
+        <label for ="patas" class="center-block">Patas:</label>
+          <input name="patas" class="form-control" formControlName="patas">
+          <div [hidden]="patas.untouched || (patas.touched && patas.valid)"
+                class="alert alert-danger">
+            El campo Patas debe ser un número y no puede estar vacío
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="dimensiones" class="center-block">Dimensiones:</label>
+          <input name ="dimensiones" class="form-control" formControlName="dimensiones">
+          <div [hidden]="dimensiones.untouched || (dimensiones.touched && dimensiones.valid)"
+                class="alert alert-danger">
+            El campo Dimensiones es requerido
+          </div>
+      </div>
+
+      <div class="form-group">
+          <label for="forma" class="center-block">Forma:</label>
+          <input name="forma" n class="form-control" formControlName="forma">
+          <div [hidden]="forma.untouched || (forma.touched && forma.valid)"
+                class="alert alert-danger">
+            El campo Forma es requerido
+          </div>
+      </div>
+
+      <div class="form-group">
+        <label for = "descripcion" class="center-block">Descripcion del producto:</label>
+          <textarea name="descripcion" class="form-control" formControlName="marca" placeholder="Ej. Madera,Aluminio,Metal..."></textarea>
+          <div [hidden]="descripcion.untouched || (descripcion.touched && descripcion.valid)"
+              class="alert alert-danger">
+            El campo Descripcion es requerido
+          </div>
+      </div>
+
+      
+    <button type="submit" 
+       class="btn btn-primary
+       "
+       [disabled]="!mesaFormulario.valid">Enviar
+  </button>
+  </form>
+
+  {{ mesaFormulario.value |json}}
+  {{mesaFormulario.status | json}}
+</div>

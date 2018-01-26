@@ -1,0 +1,19 @@
+<div class="container">
+  <h1>Lista de mesas</h1>
+  <table class="table table-bordered" >
+    <tr>
+      <th>Material</th>
+      <th>Precio</th>
+      <th>Patas</th>
+      <th>Dimensiones</th>
+      <th>Forma</th>
+    </tr>
+    <tr *ngFor="let mesa of listaMesas">
+      <td>{{ mesa.material }}</td>
+      <td>{{ mesa.precio }}</td>
+      <td>{{ mesa.patas }}</td>
+      <td>{{ mesa.dimensiones }}</td>
+      <td>{{ mesa.forma }}</td>
+    </tr>
+  </table>
+</div>
